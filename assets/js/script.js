@@ -33,7 +33,7 @@ window.onload = function () {
 // Start Up
 function startUp() {
   // load json file
-  loadJSONData("./tascam32SD.json");
+  loadJSONData("./tascam32sd.json");
 }
 // ###########################################
 // ############ XMLHttpRequest ###############
