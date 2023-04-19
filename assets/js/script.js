@@ -60,11 +60,15 @@ function startUp() {
 // Helper functions
 //*************************************************** */
 async function loadJSONData(END_POINT) {
-  const response = await fetch(END_POINT);
-  const myData = await response.json();
-  const fileCab = new FileCabinet(myData.name, myData.mainFolderArray);
-  fileCabArray.push(fileCab);
-  renderFileCabs();
+  try {
+    const response = await fetch(END_POINT);
+    const myData = await response.json();
+    const fileCab = new FileCabinet(myData.name, myData.mainFolderArray);
+    fileCabArray.push(fileCab);
+    renderFileCabs();
+  } catch (error) {
+    console.log(error);
+  }
 }
 // **************************************************
 
